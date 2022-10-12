@@ -20,7 +20,11 @@ function App() {
           Learn React
         </a>
       </header>
+<<<<<<< HEAD
       <p> tesitng ci cd pipline </p>
+=======
+      <p> tesitng ci cd </p>
+>>>>>>> ca0cf6ddc6b6624388c89253aa3b1154228ab25a
     </div>
   );
 }
