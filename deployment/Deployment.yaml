@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reactjs-app
+  labels:
+    app: reactjs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: reactjs
+  template:
+    metadata:
+      labels:
+        app: reactjs
+    spec:
+      containers:
+      - name: reactjs
+        image: mahamedyahye/reactjs:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: reactjs-service
+spec:
+  selector:
+    app: reactjs
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+  type: LoadBalancer
