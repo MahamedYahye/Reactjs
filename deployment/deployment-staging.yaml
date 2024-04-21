@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: reactjs
-        image: mahamedyahye/reactjs:latest
+        image: mahamed1/my-react-app:latest
         ports:
         - containerPort: 3000
 ---
