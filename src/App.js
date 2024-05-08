@@ -6,10 +6,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h>hallo world!!!!!!!!</h>
-        <h>hallo world Test</h>
-        <h>hallo world Demo</h>
-        <h>hallo world Mahamed!!!!!!</h>
         <h>hallo dit is een test voor de test omgeving!!!!!!!</h>
         
 
