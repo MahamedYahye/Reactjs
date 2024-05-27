@@ -16,10 +16,10 @@ jobs:
 
       - name: Get the short commit SHA
         id: vars
-        run: echo "::set-output name=short_sha::$(echo ${{ github.sha }} | cut -c1-7)"
+        run: echo "short_sha=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_ENV
 
       - name: Build the Docker image
-        run: docker build -t mahamed1/my-react-app:${{ steps.vars.outputs.short_sha }} .
+        run: docker build -t mahamed1/my-react-app:${{ env.short_sha }} .
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
@@ -30,7 +30,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.20.0
         with:
-          image-ref: 'docker.io/mahamed1/my-react-app:${{ steps.vars.outputs.short_sha }}'
+          image-ref: 'docker.io/mahamed1/my-react-app:${{ env.short_sha }}'
           format: 'sarif'
           output: 'trivy-results.sarif'
 
@@ -40,7 +40,7 @@ jobs:
           context: .
           push: true
           tags: |
-            mahamed1/my-react-app:${{ steps.vars.outputs.short_sha }}
+            mahamed1/my-react-app:${{ env.short_sha }}
             mahamed1/my-react-app:latest
 
       - name: Upload Trivy scan results to GitHub Security tab
