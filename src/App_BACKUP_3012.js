@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
+
 function App() {
   return (
     <div className="App">
@@ -8,11 +9,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h>hallo world!!!!!!!!</h>
         <h>hallo world!!!!!!!!</h>
-<<<<<<< HEAD
         <h>hallo world!!!!!!!!</h>
-=======
-
->>>>>>> d909efd99c059fc0b842e9f510ae91fe97d6b456
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
