@@ -19,27 +19,24 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       
       - name: Build Docker image
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          tags: mahamed1/my-react-app:latest
+        run: docker build -t mahamed1/my-react-app:latest .
+      
+      - name: Install Trivy
+        run: |
+          wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+          echo "deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main" | sudo tee -a /etc/apt/sources.list.d/trivy.list
+          sudo apt-get update
+          sudo apt-get install trivy
       
       - name: Scan Docker image with Trivy
-        uses: aquasecurity/trivy-action@v0.0.19
-        with:
-          image-ref: mahamed1/my-react-app:latest
-        id: trivy_scan
+        run: trivy image mahamed1/my-react-app:latest
       
       - name: Push Docker image
         if: always()
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          push: true
-          tags: mahamed1/my-react-app:latest
+        run: docker push mahamed1/my-react-app:latest
       
       - name: Upload Trivy scan results to GitHub Security
         if: always()
         uses: github/codeql-action/upload-sarif@v1
         with:
-          sarif_file: ${{ steps.trivy_scan.outputs.report }}
+          sarif_file: trivy_report.sarif
