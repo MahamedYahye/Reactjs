@@ -9,14 +9,14 @@ function App() {
         <h>hallo dit is een test voor de test omgeving!!!!!!!</h>
         <h>hallo dit is een test voor de test omgeving!!!!!!!</h>
         <h>hallo dit is een test voor de test omgeving!!!!!!!</h>
-        <h>hallo dit is een test voor de test omgeving!!!!!!!</h>
+        <h>hallo dit is een test voor de test omgeving!!!!!!!</
         
 
 
         
 
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Edit <code>src/App.js</code> and save to reload.x
         </p>
         <a
           className="App-link"
