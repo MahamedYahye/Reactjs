@@ -30,6 +30,15 @@ jobs:
       - name: Build the Docker image
         run: docker build -t mahamed1/my-react-app:${{ env.tag }} .
 
+      - name: Run unit tests
+        run: npm test -- --reporters=jest-junit
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: ./test-results.xml
+
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.20.0
         with:
