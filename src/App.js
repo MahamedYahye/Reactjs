@@ -8,7 +8,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h>hallo dit is een test voor de test omgeving!!!!!!!</h>
         <h>hallo dit is een test voor de test omgeving!!!!!!!</h>
-        <h>hallo dit is een test voor de test omgeving!!!!!!</h>
+        <h>hallo dit is een test voor de test omgeving!!!!!</h>
         <h>hallo dit is een test voor de test omgeving!!!!!!</h>
         
 
