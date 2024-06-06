@@ -9,7 +9,7 @@ function App() {
         <h>hallo dit is een test voor de test omgeving!!!!!!!</h>
         <h>hallo dit is een test voor de test omgeving!!!!!!!</h>
         <h>hallo dit is een test voor de test omgeving!!!!!</h>
-        <h>hallo dit is een test voor de test omgeving!!!!!!</h>
+        <h>hallo dit is een test voor de test omgeving!!!!!</h>
         
 
 
