@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: reactjs
-        image: mahamed1/my-react-app:main
+        image: mahamed1/my-react-app:testing
         ports:
         - containerPort: 3000
 ---
